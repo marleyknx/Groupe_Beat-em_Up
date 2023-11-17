@@ -10,6 +10,7 @@ public class PlayerStates
 
     public Rigidbody2D rb;
     public Animator anim;
+    public float stateTimer;
 
     public PlayerStates(Player player, PlayerStateMachine stateMachine, string animBoolName)
     {
@@ -29,9 +30,9 @@ public class PlayerStates
     public virtual void Tick()
     {
         Debug.Log(" je suis dans " + animBoolName);
-        // calcule l'anim du saut via la velocity y
+        // calcule l'anim du saut via la velocity y si on est en saut ou dans les air
        anim.SetFloat("VelocityY", rb.velocity.y);
-       // stateTimer -= Time.deltaTime;
+        stateTimer -= Time.deltaTime;
        // player.slideUsageTimer -= Time.deltaTime;
     }
 

@@ -6,6 +6,23 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
 
+    #region states
+    public PlayerStateMachine stateMachine { get;  set; }
+    public PlayerIdleStates idlestate { get;  set; }
+    public PlayerWalkState walkstate { get;  set; }
+     public PlayerJumpState jumpState { get;  set; }
+      public PlayerAirState airState { get;  set; }
+     /* public PlayerNormalShootState normalShootState { get; private set; }
+      public PlayerSlideState slideState { get; private set; }
+    
+    */
+    #endregion
+
+
+
+
+
+
     public Rigidbody2D rb;
     public Animator animator;
 
@@ -14,6 +31,14 @@ public class Entity : MonoBehaviour
     protected bool facingRight = true;
 
      public float currentSpeed;
+
+    [SerializeField] protected Transform groundCheck;
+    [SerializeField] protected float groundCheckDistance;
+    [SerializeField] protected LayerMask isGround;
+   
+  //  [SerializeField] protected Transform wallCheck;
+   // [SerializeField] protected float wallCheckDistance;
+   // [SerializeField] protected LayerMask isWallOrEnemy;
 
 
     protected virtual void Awake()
@@ -64,14 +89,15 @@ public class Entity : MonoBehaviour
 
     #region collision
 
-  //  public virtual bool isGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, isGround);
+    // permet de savoir si on touche le si non soit on saute soit on est dans les air
+    public virtual bool isGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, isGround);
 
-   // public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, isWallOrEnemy);
+  //  public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, isWallOrEnemy);
 
     protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-       // Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
+        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.color = Color.white;
        // Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
 

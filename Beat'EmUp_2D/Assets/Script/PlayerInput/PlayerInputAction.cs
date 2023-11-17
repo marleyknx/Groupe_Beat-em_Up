@@ -50,7 +50,18 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""398b411e-6dea-41c9-ad34-22c5f189af90"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""556124e4-62cd-4a54-b930-f7259dbbf747"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

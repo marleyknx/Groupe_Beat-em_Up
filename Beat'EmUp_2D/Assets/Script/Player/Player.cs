@@ -6,17 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : Entity 
 {
 
-    #region states
-    public PlayerStateMachine stateMachine { get; private set; }
-    public PlayerIdleStates idlestate { get; private set; }
-    public PlayerWalkState walkstate { get; private set; }
-    /*  public PlayerJumpState jumpState { get; private set; }
-      public PlayerAirState airState { get; private set; }
-      public PlayerNormalShootState normalShootState { get; private set; }
-      public PlayerSlideState slideState { get; private set; }
-      public PlayerRocketShootState rocketState { get; private set; }
-    */
-    #endregion
+  
 
     public PlayerInput playerInput { get; private set; }
     [HideInInspector]
@@ -24,7 +14,7 @@ public class Player : Entity
 
 
     [Header("Component info")]
-    public float currrentJump = 8;
+    public float currentJump = 8;
     public Vector2 movement { get; private set; }
 
 
@@ -40,8 +30,8 @@ public class Player : Entity
         stateMachine = new PlayerStateMachine();
         idlestate = new PlayerIdleStates(this, stateMachine, "Idle");
         walkstate = new PlayerWalkState(this, stateMachine, "Walk");
-        // jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        // airState = new PlayerAirState(this, stateMachine, "Jump");
+         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
+        airState = new PlayerAirState(this, stateMachine, "Jump");
         #endregion
 
         #region Input
@@ -65,7 +55,7 @@ public class Player : Entity
         base.Update();
         stateMachine.currentState.Tick();
          movement = moveAction.ReadValue<Vector2>();
-      //  movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+     
         Debug.Log(movement);
     }
 

@@ -16,7 +16,7 @@ public class Player : Entity
     [Header("Component info")]
     public float currentJump = 8;
     public Vector2 movement { get; private set; }
-
+    public Transform shadow;
 
     [Header("security info")]
     public bool IsMoving;

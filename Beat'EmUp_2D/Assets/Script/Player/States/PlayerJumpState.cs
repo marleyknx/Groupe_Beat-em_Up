@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerStates
 {
+
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
@@ -11,18 +12,28 @@ public class PlayerJumpState : PlayerStates
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocity(player.movement.x * player.currentSpeed, player.movement.y * player.currentJump);
+        
+       // timer d'etat qui nous fais passer du saut a air state
+
+        stateTimer = 1;
+
+       
     }
 
     public override void Exit()
     {
         base.Exit();
+        // laisse la position de l'ombre la ou il sera puis ont le fais revenir dans air state
+
+        player.shadow.position = Vector3.zero;
     }
 
     public override void FixedTick()
     {
         base.FixedTick();
-        if (rb.velocity.y < 0) stateMachine.ChangeState(player.airState);
+      
+     
+        if (stateTimer < 0) stateMachine.ChangeState(player.airState);
     }
 
     public override void Tick()

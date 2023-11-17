@@ -32,14 +32,7 @@ public class Entity : MonoBehaviour
 
      public float currentSpeed;
 
-    [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
-    [SerializeField] protected LayerMask isGround;
-   
-  //  [SerializeField] protected Transform wallCheck;
-   // [SerializeField] protected float wallCheckDistance;
-   // [SerializeField] protected LayerMask isWallOrEnemy;
-
+  
 
     protected virtual void Awake()
     {
@@ -87,20 +80,5 @@ public class Entity : MonoBehaviour
     #endregion
 
 
-    #region collision
-
-    // permet de savoir si on touche le si non soit on saute soit on est dans les air
-    public virtual bool isGrounded() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, isGround);
-
-  //  public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, isWallOrEnemy);
-
-    protected virtual void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.color = Color.white;
-       // Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
-
-    }
-    #endregion
+  
 }

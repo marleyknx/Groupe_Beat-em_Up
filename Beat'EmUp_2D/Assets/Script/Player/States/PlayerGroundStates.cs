@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerGroundStates : PlayerStates
 {
+
+    // a renommer si besoin 
     public PlayerGroundStates(Player player, PlayerStateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
 
+    // permet de faire la passerel entre le saut et le " sol " 
     public override void Enter()
     {
         base.Enter();
@@ -21,12 +24,13 @@ public class PlayerGroundStates : PlayerStates
     public override void FixedTick()
     {
         base.FixedTick();
-        Debug.Log(player.isGrounded());
+       
     }
 
     public override void Tick()
     {
         base.Tick();
-        if(player.jumpAction.IsPressed() && player.isGrounded()) stateMachine.ChangeState(player.jumpState);
+        // mettre un second parametre pour savoir si l'ombre reviens a sa position initial si oui on ressaute si non bloque le saut
+        if(player.jumpAction.IsPressed() ) stateMachine.ChangeState(player.jumpState);
     }
 }

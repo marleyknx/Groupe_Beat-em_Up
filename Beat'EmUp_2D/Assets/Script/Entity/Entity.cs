@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    //Attention, t'es en train de mettre une PlayerStateMachine avec des PlayerStates dans une classe censée d'être de base
 
     #region states
     public PlayerStateMachine stateMachine { get;  set; }
@@ -34,36 +35,39 @@ public class Entity : MonoBehaviour
 
   
 
-    protected virtual void Awake()
+    protected virtual void Awake() //<- méthode heritée de Monobehaviour, virtual par défaut. Ça sert à rien si elle est vide.
     {
 
     }
 
-    protected virtual void Start()
+    protected virtual void Start() //<- méthode heritée de Monobehaviour, virtual par défaut. Ça sert à rien si elle est vide.
     {
 
     }
 
-    protected virtual void FixedUpdate()
+    protected virtual void FixedUpdate() //<- méthode heritée de Monobehaviour, virtual par défaut. Ça sert à rien si elle est vide.
     {
       //  isGrounded();
 
     }
 
-    protected virtual void Update()
+    protected virtual void Update() //<- méthode heritée de Monobehaviour, virtual par défaut. Ça sert à rien si elle est vide.
     {
 
     }
 
+
+    // Les fonctions ici en bas ne dévraient pas appartenir à Entity car ils s'occupent du rendu du gameobject -> Single Responsibility
+    // Il faudrait les bouger dans un script qui s'occupe du mouvement.
     #region Flip
-    public virtual void flip()
+    public virtual void flip()  //pourquoi virtual ?
     {
         facingDir = facingDir * -1;
         facingRight = !facingRight;
-        transform.Rotate(0, 180, 0);
+        transform.Rotate(0, 180, 0); //Cette transformation t'oblige à avoir des sprites de double face, pour un petit jeu ce n'est pas grave, pour les grands tu perds la perf
 
     }
-    protected virtual void FlipController(float xvelocity)
+    protected virtual void FlipController(float xvelocity) //pourquoi virtual ?
     {
         if (rb.velocity.x > 0 && !facingRight) flip(); else if (rb.velocity.x < 0 && facingRight) flip();
 

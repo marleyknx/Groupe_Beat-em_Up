@@ -16,6 +16,7 @@ public class PlayerJumpState : PlayerStates
        // timer d'etat qui nous fais passer du saut a air state
 
         stateTimer = 1;
+        player.animator.SetTrigger("Jump");
 
        
     }
@@ -25,7 +26,7 @@ public class PlayerJumpState : PlayerStates
         base.Exit();
         // laisse la position de l'ombre la ou il sera puis ont le fais revenir dans air state
 
-        player.shadow.position = Vector3.zero;
+        player.shadow.position = Vector3.zero; //Pourquoi ?
     }
 
     public override void FixedTick()
@@ -33,7 +34,7 @@ public class PlayerJumpState : PlayerStates
         base.FixedTick();
       
      
-        if (stateTimer < 0) stateMachine.ChangeState(player.airState);
+        if (stateTimer < 0) stateMachine.ChangeState(player.airState); // Comment tu veux que le perso réagit dans l'air ? On enlève la gravité temporairement pour permettre au joueur de faire des trucs dans l'air ?
     }
 
     public override void Tick()

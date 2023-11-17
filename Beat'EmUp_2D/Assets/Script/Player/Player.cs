@@ -31,7 +31,7 @@ public class Player : Entity
         idlestate = new PlayerIdleStates(this, stateMachine, "Idle");
         walkstate = new PlayerWalkState(this, stateMachine, "Walk");
          jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        airState = new PlayerAirState(this, stateMachine, "Jump");
+        airState = new PlayerAirState(this, stateMachine, "Jump"); //Pourquoi un AirState ?
         #endregion
 
         #region Input
@@ -52,7 +52,7 @@ public class Player : Entity
     // Update is called once per frame
    protected override void Update()
     {
-        base.Update();
+        base.Update(); // Il n'y a rien dans la base
         stateMachine.currentState.Tick();
          movement = moveAction.ReadValue<Vector2>();
      
@@ -62,7 +62,7 @@ public class Player : Entity
     protected override void FixedUpdate()
     {
 
-        base.FixedUpdate();
+        base.FixedUpdate(); //Il n'y a rien dans la base
         stateMachine.currentState.FixedTick();
         
       

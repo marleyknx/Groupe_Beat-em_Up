@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Scripting.APIUpdating;
-using UnityEngine.UIElements;
 
 public abstract class EntityInput : MonoBehaviour {
     public EntityInputValues InputValues { get; private set; }

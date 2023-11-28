@@ -1046,6 +1046,7 @@ GameObject:
   - component: {fileID: 1159492906}
   - component: {fileID: 1159492907}
   - component: {fileID: 1159492908}
+  - component: {fileID: 1159492909}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1169,6 +1170,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpeed: 1
+--- !u!114 &1159492909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159492898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecba9fedeb6fc6f4ca797c3be482c14d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 177081381}
+  _canAttack: 0
+  _attackCooldown: 0
 --- !u!1 &1209278285
 GameObject:
   m_ObjectHideFlags: 0

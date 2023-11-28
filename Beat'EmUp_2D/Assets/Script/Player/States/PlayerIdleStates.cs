@@ -21,7 +21,6 @@ public class PlayerIdleStates : PlayerGroundStates
     public override void FixedTick()
     {
         base.FixedTick();
-        if (player.movement.x != 0 || player.movement.y != 0) stateMachine.ChangeState(player.walkstate); // player.movement.magnitude > 0 est plus performant, vu que tu l'éxécutes en fixedTime
     }
 
     public override void Tick()

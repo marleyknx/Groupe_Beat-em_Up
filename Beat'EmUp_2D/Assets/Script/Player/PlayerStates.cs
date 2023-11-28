@@ -25,13 +25,10 @@ public class PlayerStates
         anim = player.animator;
        anim.SetBool(animBoolName, true);
        // triggerCalled = false;
-         Debug.Log(" je rentre dans " + animBoolName);
     }
     public virtual void Tick()
     {
-        Debug.Log(" je suis dans " + animBoolName);
         // calcule l'anim du saut via la velocity y si on est en saut ou dans les air
-       anim.SetFloat("VelocityY", rb.velocity.y);
         stateTimer -= Time.deltaTime;
        // player.slideUsageTimer -= Time.deltaTime;
     }
@@ -43,7 +40,6 @@ public class PlayerStates
 
     public virtual void Exit()
     {
-         Debug.Log(" je sors de " + animBoolName);
         anim.SetBool(animBoolName, false);
     }
 

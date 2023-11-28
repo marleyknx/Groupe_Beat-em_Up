@@ -22,7 +22,6 @@ public class PlayerAirState : PlayerStates
     public override void FixedTick()
     {
         base.FixedTick();
-        player.SetVelocity(player.movement.x * player.currentSpeed, rb.velocity.y);
         // lorceque le shadow reviens dans sa position initial retourne a idle
 
        // if () stateMachine.ChangeState(player.idlestate);

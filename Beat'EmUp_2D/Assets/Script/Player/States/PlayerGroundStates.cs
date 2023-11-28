@@ -31,6 +31,5 @@ public class PlayerGroundStates : PlayerStates
     {
         base.Tick();
         // mettre un second parametre pour savoir si l'ombre reviens a sa position initial si oui on ressaute si non bloque le saut
-        if(player.jumpAction.IsPressed() ) stateMachine.ChangeState(player.jumpState);
     }
 }

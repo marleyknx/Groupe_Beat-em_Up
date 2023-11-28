@@ -11,7 +11,6 @@ public class PlayerWalkState : PlayerGroundStates
     public override void Enter()
     {
         base.Enter();
-        player.IsMoving = true;
 
     }
 
@@ -19,21 +18,17 @@ public class PlayerWalkState : PlayerGroundStates
     {
         base.Exit();
         player.ZeroVelocity();
-        player.IsMoving = false;
 
     }
 
     public override void FixedTick()
     {
         base.FixedTick();
-        var normalizedMovement = player.movement.normalized;
-        player.SetVelocity(normalizedMovement.x * player.currentSpeed, normalizedMovement.y * player.currentSpeed);
      
     }
 
     public override void Tick()
     {
         base.Tick();
-        if (player.movement == Vector2.zero) stateMachine.ChangeState(player.idlestate);
     }
 }

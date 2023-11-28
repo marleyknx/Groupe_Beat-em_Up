@@ -2,57 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityMovement : MonoBehaviour
-{
+public class EntityMovement : MonoBehaviour {
 
     Rigidbody2D rb;
-   public bool isMoving { get;  set; }
+    public bool isMoving { get; set; }
     public float currentSpeed;
 
     EntityInput entityInput;
 
-
-    Vector2 move;
-     
-    
-
-
-    private void Awake()
-    {
+    private void Awake() {
         entityInput = GetComponent<EntityInput>();
-
-       move = entityInput.InputValues.Move;
-
+        rb = GetComponent<Rigidbody2D>();
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        isMoving = true; 
+    void Start() {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-       
+    void Update() {
+        isMoving = entityInput.InputValues.Move.magnitude > 0;
+    }
 
+    private void FixedUpdate() {
+        SetMovemntDirection(entityInput.InputValues.Move);
+    }
+
+    public void SetMovemntDirection(Vector2 direction) {
+        if (!isMoving)
+            SetZeroMovemnent();
+        rb.velocity = new Vector2(direction.x * currentSpeed, direction.y * currentSpeed);
+    }
+
+    public void SetZeroMovemnent() {
+        rb.velocity = Vector2.zero;
 
     }
 
-    private void FixedUpdate()
-    {
-        SetMovemntDirection(move);
-    }
-
-    public void SetMovemntDirection(Vector2 direction)
-    {
-        if (!isMoving) return;
-        rb.velocity = new Vector2 (direction.x * currentSpeed, direction.y * currentSpeed).normalized;
-    }
-    
-    public void SetZeroMovemnent(Vector2 movemnent)
-    {
-        movemnent = Vector2.zero;
-        
-    }
-  
 }

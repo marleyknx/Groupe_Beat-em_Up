@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
-{
+public class Entity : MonoBehaviour, IHitable {
     //Attention, t'es en train de mettre une PlayerStateMachine avec des PlayerStates dans une classe censée d'être de base
 
     #region states
@@ -29,6 +28,8 @@ public class Entity : MonoBehaviour
 
 
     protected int facingDir { get; private set; } = 1;
+    public float LastHitTime { get ; set; }
+
     protected bool facingRight = true;
 
      public float currentSpeed;
@@ -81,8 +82,16 @@ public class Entity : MonoBehaviour
 
     }
     public void ZeroVelocity() => rb.velocity = new Vector2(0, 0);
+
+    public void TakeHit(GameObject hitSource) {
+        if (Time.time > LastHitTime && hitSource != gameObject) {
+            LastHitTime = Time.time + 0.5f;
+            Debug.Log($"{gameObject.name} a reçu un coup de {hitSource.name}!");
+        }
+    }
+
     #endregion
 
 
-  
+
 }

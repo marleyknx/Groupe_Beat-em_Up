@@ -8,7 +8,7 @@ public class EnemyInput : EntityInput {
     public Transform target;
     // detetct l'attack
     public bool inRange;
-
+    Vector2 directionToTarget;
 
     public override EntityInputValues GatherInput() {
         return new EntityInputValues {
@@ -19,18 +19,19 @@ public class EnemyInput : EntityInput {
 
     private Vector2 EvaluateDirection(Transform _target) {
         //code pour savoir qu'estce quon fait
-        Vector2 directionToTarget = _target.position - transform.position;
+         directionToTarget = _target.position - transform.position;
+       directionToTarget.Normalize();
        
-        return new Vector2(directionToTarget.x, directionToTarget.y); //remplacer par l'evaluation de l'ennemi
+            if(inRange)
+         return  Vector3.zero;
+       else    return new Vector2(directionToTarget.x, directionToTarget.y); //remplacer par l'evaluation de l'ennemi
     }
 
-    public bool EvaluateAttack(bool inRange)
+    public bool EvaluateAttack(bool _inRange)
     {
-        if (inRange)
-        {
-            Debug.Log("Attack");
-
-        }
+        
+       
+       
         return inRange;
     }
 
@@ -38,25 +39,25 @@ public class EnemyInput : EntityInput {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision);
-        
-        if(collision.transform == target)
-            inRange = true;
-       
 
+
+        if (collision.transform.parent == target)
+            inRange = true;
+        else
+            Debug.Log(collision.gameObject.name);
+        /*else
+            Debug.Log(collision.gameObject.name);
+        */
         
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
+  
 
-        if (collision.transform == target)
-            inRange = true;
-    }
+  
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform != target)
+        if (collision.transform.parent == target)
             inRange = false;
        
     }

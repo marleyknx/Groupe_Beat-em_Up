@@ -11,8 +11,8 @@ public class Player : Entity {
 
     protected override void Awake() {
         base.Awake();
+       stateMachine = new PlayerStateMachine();
         #region states
-        stateMachine = new PlayerStateMachine();
         idlestate = new PlayerIdleStates(this, stateMachine, "Idle");
         walkstate = new PlayerWalkState(this, stateMachine, "Walk");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");

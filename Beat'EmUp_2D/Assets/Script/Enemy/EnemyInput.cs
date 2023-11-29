@@ -26,8 +26,11 @@ public class EnemyInput : EntityInput {
 
     public bool EvaluateAttack(bool inRange)
     {
-        if (inRange) 
-        Debug.Log("Attack");
+        if (inRange)
+        {
+            Debug.Log("Attack");
+
+        }
         return inRange;
     }
 

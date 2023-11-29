@@ -53,7 +53,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update() //<- méthode heritée de Monobehaviour, virtual par défaut. Ça sert à rien si elle est vide.
     {
-
+        animator.SetBool("IsMoving", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > 0);
     }
 
 

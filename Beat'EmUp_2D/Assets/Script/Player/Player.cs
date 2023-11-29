@@ -30,7 +30,6 @@ public class Player : Entity {
     // Update is called once per frame
     protected override void Update() {
         base.Update(); // Il n'y a rien dans la base
-        animator.SetBool("IsMoving", Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > 0);
         stateMachine.currentState.Tick();
     }
 

@@ -745,8 +745,13 @@ GameObject:
   m_Component:
   - component: {fileID: 660387277}
   - component: {fileID: 660387279}
+<<<<<<< Updated upstream
   - component: {fileID: 660387280}
   - component: {fileID: 660387281}
+=======
+  - component: {fileID: 660387278}
+  - component: {fileID: 660387280}
+>>>>>>> Stashed changes
   m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
@@ -821,6 +826,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!95 &660387280
 Animator:
   serializedVersion: 5
@@ -843,6 +849,9 @@ Animator:
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &660387281
+=======
+--- !u!114 &660387280
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -854,7 +863,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20f384f31d584e4381376afac2db9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   _hitCollider: {fileID: 0}
+=======
+  _hitCollider: {fileID: 1030513504}
+>>>>>>> Stashed changes
 --- !u!1 &722649010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1030513505
 Transform:
   m_ObjectHideFlags: 0
@@ -1570,13 +1583,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1642500100}
   - component: {fileID: 1642500105}
+<<<<<<< Updated upstream
   - component: {fileID: 1642500108}
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 1642500101}
   - component: {fileID: 1642500106}
   - component: {fileID: 1642500107}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1746,7 +1762,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -2.4383397, y: 0.12099086}
@@ -2008,7 +2024,7 @@ GameObject:
   - component: {fileID: 2136663754}
   - component: {fileID: 2136663755}
   m_Layer: 0
-  m_Name: HitBoxe
+  m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

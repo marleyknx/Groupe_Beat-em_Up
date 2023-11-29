@@ -31,4 +31,9 @@ public class EntityAttack : MonoBehaviour
             _lastAttackTime = Time.time + _attackCooldown;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        IHitable iHitable = other.gameObject.GetComponentInParent<IHitable>();
+        iHitable?.TakeHit(gameObject);
+    }
 }

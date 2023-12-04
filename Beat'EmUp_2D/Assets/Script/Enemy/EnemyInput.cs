@@ -51,9 +51,15 @@ public class EnemyInput : EntityInput {
         
     }
 
-  
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.transform.parent == target)
+            inRange = true;
+        else
+            Debug.Log(collision.gameObject.name);
+    }
 
-  
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {

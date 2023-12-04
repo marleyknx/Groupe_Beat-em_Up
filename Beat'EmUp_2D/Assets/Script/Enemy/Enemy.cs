@@ -10,4 +10,14 @@ public class Enemy : Entity
     {
         spawnManager = _spawn;
     }
+
+    private void Update()
+    {
+        if (UnityEngine.InputSystem.Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            spawnManager.currentMonster.Remove(this.gameObject);
+            Destroy(this.gameObject);
+
+        }
+    }
 }

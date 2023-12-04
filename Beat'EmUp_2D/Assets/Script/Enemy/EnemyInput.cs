@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyInput : EntityInput {
 
     //detect le joueur
-    public Transform target;
+    public GameObject target;
     // detetct l'attack
     public bool inRange;
     Vector2 directionToTarget;
@@ -17,9 +17,9 @@ public class EnemyInput : EntityInput {
         };
     }
 
-    private Vector2 EvaluateDirection(Transform _target) {
+    private Vector2 EvaluateDirection(GameObject _target) {
         //code pour savoir qu'estce quon fait
-         directionToTarget = _target.position - transform.position;
+         directionToTarget = _target.transform.position - transform.position;
        directionToTarget.Normalize();
        
             if(inRange)

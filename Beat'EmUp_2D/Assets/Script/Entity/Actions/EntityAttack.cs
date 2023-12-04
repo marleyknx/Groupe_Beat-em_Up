@@ -39,7 +39,6 @@ public class EntityAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (!other.CompareTag(_hitBoxTag))
             return;
-
         IHitable iHitable = other.gameObject.GetComponentInParent<IHitable>();
         iHitable?.TakeHit(gameObject);
     }

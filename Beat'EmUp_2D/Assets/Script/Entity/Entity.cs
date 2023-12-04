@@ -86,7 +86,10 @@ public class Entity : MonoBehaviour, IHitable {
     public void TakeHit(GameObject hitSource) {
         if (Time.time > LastHitTime && hitSource != gameObject) {
             LastHitTime = Time.time + 0.5f;
-            Debug.Log($"{gameObject.name} a reçu un coup de {hitSource.name}!");
+            animator.SetTrigger("Hurt");
+
+            Health health = GetComponent<Health>();
+            health?.Damage(1);
         }
     }
 

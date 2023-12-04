@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5445060325061631848}
   - component: {fileID: 1229462202492766839}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Hitbox
   m_TagString: Hitbox
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6941208944282471449}
   - component: {fileID: 6033956519676459158}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: PunchCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,10 +121,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1527
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2950487, y: 0.45799538}
+  m_Size: {x: 0.25, y: 0.45799538}
   m_EdgeRadius: 0
 --- !u!1 &3773102221109586309
 GameObject:
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6433143698803848047}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,9 +195,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1948659242227166245}
   - component: {fileID: 4763860601856803975}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Range
-  m_TagString: Untagged
+  m_TagString: Range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,8 +249,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.66, y: 0.11}
-  m_Size: {x: 0.78252554, y: 0.4097096}
+  m_Offset: {x: -2.6394942, y: 0.11}
+  m_Size: {x: 0.57746893, y: 0.40971282}
   m_Direction: 1
 --- !u!1 &5847321651714133225
 GameObject:
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 2183261235466563554}
   - component: {fileID: 6028219760924227820}
   - component: {fileID: 9174395831739793937}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 5333536847027326160}
   - component: {fileID: 759756050700808290}
   - component: {fileID: 2535261416830350762}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -537,13 +537,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4224331335634163399}
     m_Modifications:
+    - target: {fileID: 1694968345106982159, guid: 63c86128ef39c314cbf9cca5cc171f7c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4701507977976298276, guid: 63c86128ef39c314cbf9cca5cc171f7c, type: 3}
       propertyPath: m_Name
       value: Shadow
       objectReference: {fileID: 0}
     - target: {fileID: 4701507977976298276, guid: 63c86128ef39c314cbf9cca5cc171f7c, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5870917917290239854, guid: 63c86128ef39c314cbf9cca5cc171f7c, type: 3}
       propertyPath: m_LocalPosition.x

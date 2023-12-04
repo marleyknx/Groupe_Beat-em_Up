@@ -1,3 +1,5 @@
+//#define VERBOSE
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,12 +45,10 @@ public class EnemyInput : EntityInput {
 
         if (collision.transform.parent == target)
             inRange = true;
+#if VERBOSE
         else
             Debug.Log(collision.gameObject.name);
-        /*else
-            Debug.Log(collision.gameObject.name);
-        */
-        
+#endif
     }
 
     private void OnTriggerStay2D(Collider2D collision)

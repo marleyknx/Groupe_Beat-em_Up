@@ -39,21 +39,21 @@ public class EnemyInput : EntityInput {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.parent == target)
+        if (collision.transform.parent.gameObject == target)
             inRange = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.transform.parent == target)
-            inRange = true;
-    }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.transform.parent == target)
+    //        inRange = true;
+    //}
 
 
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.parent == target)
+        if (collision.transform.parent.gameObject == target)
             inRange = false;
     }
 

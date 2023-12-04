@@ -717,7 +717,7 @@ PrefabInstance:
     - target: {fileID: 3896017709106477084, guid: ab513af368867db41a73e0dafc1271ef, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1159492899}
+      objectReference: {fileID: 1159492898}
     - target: {fileID: 6503231943491293744, guid: ab513af368867db41a73e0dafc1271ef, type: 3}
       propertyPath: m_TagString
       value: Hitbox
@@ -801,6 +801,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 397207436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1159492898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8516717112977941468, guid: 4f020b113345b3e43a53a7f935c7c0f7, type: 3}
+  m_PrefabInstance: {fileID: 4586852985291030261}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1159492899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4224331335634163399, guid: 4f020b113345b3e43a53a7f935c7c0f7, type: 3}

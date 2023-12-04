@@ -23,7 +23,7 @@ public class PlayerStates
     {
         rb = player.rb;
         anim = player.animator;
-       anim.SetBool(animBoolName, true);
+        anim.SetBool(animBoolName, true);
        // triggerCalled = false;
     }
     public virtual void Tick()

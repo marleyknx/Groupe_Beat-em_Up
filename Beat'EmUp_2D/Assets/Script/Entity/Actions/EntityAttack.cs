@@ -1,6 +1,8 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class EntityAttack : MonoBehaviour
@@ -8,6 +10,8 @@ public class EntityAttack : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private bool _canAttack;
     [SerializeField] private float _attackCooldown;
+    [TagField]
+    [SerializeField] private string _hitBoxTag;
 
     private bool _isAttacking;
     private float _lastAttackTime;
@@ -33,6 +37,9 @@ public class EntityAttack : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        if (!other.CompareTag(_hitBoxTag))
+            return;
+
         IHitable iHitable = other.gameObject.GetComponentInParent<IHitable>();
         iHitable?.TakeHit(gameObject);
     }

@@ -613,7 +613,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.062221408, y: -0.03999996, z: -10}
+  m_LocalPosition: {x: -0.06668401, y: -0.03999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -747,7 +747,6 @@ GameObject:
   - component: {fileID: 660387279}
   - component: {fileID: 660387280}
   - component: {fileID: 660387281}
-
   m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
@@ -844,7 +843,6 @@ Animator:
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &660387281
-
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -856,8 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20f384f31d584e4381376afac2db9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitCollider: {fileID: 0}
-
+  _hitCollider: {fileID: 1030513504}
 --- !u!1 &722649010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1571,6 @@ GameObject:
   - component: {fileID: 1642500100}
   - component: {fileID: 1642500105}
   - component: {fileID: 1642500108}
-
   - component: {fileID: 1642500101}
   - component: {fileID: 1642500106}
   - component: {fileID: 1642500107}
